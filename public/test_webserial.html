@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>WebUSB on Dedicated Worker Example</title>
+    <script>
+
+	// Request permission to access the device.
+		alert(navigator.serial);
+		let dev = navigator.serial.requestPort({ filters: [
+			{ vendorId: 0x1a86, productId: 0x7523 },    // CH341
+			{ vendorId: 0x067b, productId: 0x2303 },    // PL2303
+		]})
+
+		// Use the Vendor ID and Product ID to identify the USB device.
+		.then(device => deviceWorker.postMessage({
+			action: 'get-device',
+			vendorId: device.vendorId,
+			productId: device.productId,
+		}));
+
+		deviceWorker.postMessage({
+			action: 'get-device',
+			vendorId: 0x067b,
+			productId: 0x2303
+		});
+
+
+      // Read data from the connected device.
+      function readDevice() {
+        deviceWorker.postMessage({action: 'read-device'});
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="connectToDevice()">Connect Device</button>
+    <button onclick="readDevice()">Read Device</button>
+    <p>Device Output</p>
+    <pre id="log">Data start here...</pre>
+    <script>
+      // Update the pre element with output from the device.
+      deviceWorker.onmessage = function(event) {
+        let logdiv = document.getElementById('log');
+        //log.textContext = event.data;
+        logdiv.innerHTML = event.data;
+      };
+    </script>
+  </body>
+</html>
+
+

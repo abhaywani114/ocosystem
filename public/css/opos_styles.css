@@ -1,0 +1,667 @@
+/* Custom CSS Styles for OPOSsum */
+
+.btn.disabled, .btn:disabled {
+    opacity: 1.0;
+}
+
+.opos-btn-keyboard {
+    margin-top: 5px;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    z-index: 10;
+    padding: 0 20px;
+}
+
+.opos_digitbtn {
+    width: 70px !important;
+    height: 70px !important;
+    padding-top: 5px;
+    text-align: center;
+    vertical-align: middle;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    padding-left: 11px;
+    border-radius: 10px;
+    font-size: 25px;
+    float: none;
+    margin-right: 0px;
+}
+
+.sectionA {
+    height: auto;
+    width: 75%;
+    float: left;
+    height: 675px;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.sectionB {
+    background-color: #34363A;
+    color: white;
+    width: 25%;
+    float: right;
+    height: 100vh;
+    overflow: hidden;
+    padding: 10px 8px 0px 12px;
+    font-size: 14px;
+}
+
+.sectionC {
+    background-color: white;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    margin-top: 5px;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    z-index: 10;
+    padding: 10px 5px 0px;
+}
+
+.point_div1 {
+    font-size: 18px;
+    margin-bottom: 11px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.point_div2 {
+    font-size: 18px;
+    margin-bottom: 11px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.bg-tablenaming {
+    color: #fff;
+    background: #fb516c;
+    border-color: #fb516c;
+}
+
+
+.bg-split {
+    color: #fff;
+    background: #f53681;
+    border-color: #f53681
+}
+
+.bg-print {
+    color: #fff;
+    background: #feb43f;
+    border-color: #feb43f
+}
+
+.bg-recpt-point {
+    color: #fff;
+    background: #00a2ff;
+    border-color: #00a2ff
+}
+
+.bg-recpt-takeaway {
+    color: #fff;
+    background: #5cd6d6;
+    border-color: #5cd6d6
+}
+
+.bg-recpt-print {
+    color: #fff;
+    background: #f4d43d;
+    border-color: #f4d43d
+}
+
+.bg-recpt-refund {
+    color: #fff;
+    background: #ff7e30;
+    border-color: #ff7e30
+}
+
+.bg-recpt-void {
+    color: #fff;
+    background: #ff0402;
+    border-color: #ff0402
+}
+
+.bg-recpt-warranty {
+    color: #fff;
+    background: #8e0851;
+    border-color: #8e0851
+}
+
+.bg-manual {
+    color: #fff;
+    background: #521865;
+    border-color: #521865
+}
+
+.bg-code {
+    color: #fff;
+    background: #521865;
+    border-color: #521865
+}
+
+.bg-staff {
+    color: #fff;
+    background: #001d57;
+    border-color: #001d57
+}
+
+.bg-receiptlist {
+    color: #fff;
+    background: #982450;
+    border-color: #982450
+}
+
+.bg-promo {
+    color: #fff;
+    background: #F6BB00;
+    border-color: #F6BB00
+}
+
+.bg-booking {
+    color: #fff;
+    background: #ff644e;
+    border-color: #ff644e
+}
+
+.bg-voucher {
+    color: #fff;
+    background: #0060FF;
+    border-color: #0060FF
+}
+
+.bg-skip {
+    color: #fff;
+    background: #0CB372;;
+    border-color: #0CB372
+}
+
+.bg-drawer {
+    color: #fff;
+    background: #0CB372;
+    border-color: #0CB372
+}
+
+.bg-reset {
+    color: #fff;
+    background: #0CB372;
+    border-color: #0CB372
+}
+
+.bg-papercoupon {
+    color: #fff;
+    background: #0560F8;
+    border-color: #0560F8
+}
+
+.bg-zero {
+    color: #fff;
+    background: #0CB372;
+    border-color: #0CB372
+}
+
+.bg-digits {
+    color: #fff;
+    background: #xxxxxxx;
+    border-color: #xxxxxxx
+}
+
+.bg-cash {
+    color: #fff;
+    background: #xxxxxxx;
+    border-color: #xxxxxxx
+}
+
+.bg-creditcard {
+    color: #fff;
+    background: #5F197A;
+    border-color: #5F197A
+}
+
+.bg-point {
+    color: #fff;
+    background: #00A2FF;
+    border-color: #00A2FF
+}
+
+.bg-member {
+    color: #fff;
+    background: #00A2FF;
+    border-color: #00A2FF
+}
+
+.bg-wallet {
+    color: #fff;
+    background: #002778;
+    border-color: #002778
+}
+
+.bg-enter {
+    color: #fff;
+    background: #333333;
+    border-color: #333333
+}
+
+.bg-leftarrow {
+    color: #fff;
+    background: #333333;
+    border-color: #333333
+}
+
+.bg-rightarrow {
+    color: #fff;
+    background: #333333;
+    border-color: #333333
+}
+
+.bg-screen_a_header {
+    color: #fff;
+    border-color: #A6A6A6;
+    background-color: #A6A6A6;
+}
+
+.bg-screen_b {
+    background-color: #34363A;
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.bg-opossum-purple { /*height: 50px; */
+    background-color: #21023F
+}
+
+.bg-opossum-footer, #landing-view:after {
+    height: 30px;
+    background-color: #21023F
+}
+
+.bg-wastage {
+    color: #fff;
+    background: #498430;
+    border-color: #498430
+}
+
+.bg-pending {
+    color: #fff;
+    background: #1bffad;
+    border-color: #1bffad
+}
+
+.bg-search-doc {
+    color: #fff;
+    background: #1bffad;
+    border-color: #1bffad
+}
+
+.bg-stock_in {
+    color: #fff;
+    background: #22ff35;
+    border-color: #22ff35
+}
+
+.bg-define_promo {
+    color: #fff;
+    background: #F6BB00;
+    border-color: #F6BB00
+}
+
+.bg-eod_print {
+    color: #fff;
+    background: #ff3c39;
+    border-color: #ff3c39
+}
+
+.bg-stock_out {
+    color: #fff;
+    background: #fa312a;
+    border-color: #fa312a
+}
+
+.bg-product {
+    color: #fff;
+    background: #ff735f;
+    border-color: #ff735f
+}
+
+.bg-branch_eod {
+    color: #fff;
+    background: #ff3b35;
+    border-color: #ff3b35
+}
+
+.bg-rate_other_all {
+    color: #fff;
+    background: #793d93;
+    border-color: #793d93
+}
+
+.bg-back-space {
+    color: #fff;
+    background: #ff3c39;
+    border-color: #ff3c39
+}
+
+.bg-confirm {
+    color: #fff;
+    background: #0cc0e8;
+    border-color: #0cc0e8
+}
+
+.bg-invoiceprint {
+    color: #fff;
+    background: #295FA5;
+    border-color: #295FA5
+}
+
+.bg-invoicevoid {
+    color: #fff;
+    background: #D03230;
+    border-color: #D03230
+}
+
+.bg-invoicerefund {
+    color: #fff;
+    background: #D09F66;
+    border-color: #D09F66
+}
+
+.bg-invoicerewarrenty {
+    color: #fff;
+    background: #77B690;
+    border-color: #77B690
+}
+
+.bg-invoiceretakeway {
+    color: #fff;
+    background: #70B4AB;
+    border-color: #70B4AB
+}
+
+.table_opos {
+    border-bottom: 0px !important;
+}
+
+.table_opos th, .table_opos td {
+    border: 1px !important;
+}
+
+.fixed-table-container {
+    border: 0px !important;
+}
+
+.h1_header {
+    text-align: center;
+    /*font-size: 30px;*/
+    color: #ffffff;
+
+}
+
+hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-top: 1px solid rgb(255, 255, 255);
+}
+
+.discount-border {
+    border-radius: 10px;
+    border: 1px solid white;
+    padding: 8px;
+}
+
+.discount-border-inner {
+    border-radius: 10px;
+    border: 1px solid #bfbcbc;
+    padding: 8px;
+	height: 40px !important;
+	width: 100px !important;
+}
+
+.qty-nm {
+    border: 1px solid;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.menu-header {
+    cursor: pointer;
+    float: left;
+    margin-top: 0;
+}
+
+.value-button {
+    display: inline-block;
+    font-size: 24px;
+    line-height: 21px;
+    text-align: center;
+    vertical-align: middle;
+    background: #fff;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-align: center;
+    text-align: center;
+}
+
+.value-button:hover {
+    cursor: pointer;
+}
+
+#decrease {
+    border-radius: 15px;
+}
+
+#increase {
+    border-radius: 15px;
+}
+
+#input-wrap {
+    margin: 0px;
+    padding: 0px;
+}
+
+input#number {
+    text-align: center;
+    border: none;
+    border: 1px solid #e2dddd;
+    margin: 0px;
+    width: 90px;
+    border-radius: 5px;
+    height: 38px;
+    background-color: #d4d3d36b !important;
+}
+
+.qty_main {
+    padding: 5px !important;
+}
+
+/*sidebar css*/
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+
+}
+
+.sidenavdiv {
+    margin-top: 5px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+#mySidenav {
+    background-color: rgb(52, 54, 58);
+    height: 100%;
+    overflow: hidden;
+    z-index: 100;
+}
+
+.sidenavdiv p {
+    margin: 0px;
+}
+
+input#number_qty {
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    background-color: #d4d3d36b !important;
+    vertical-align: bottom;
+}
+
+.inside_qty {
+    /* margin-top: -3px;*/
+}
+
+.plus_minus {
+    font-size: 24px;
+    vertical-align: middle;
+
+}
+
+.blurtxtfd {
+    text-align: center;
+    width: 75px;
+    border: 2px solid gray;
+
+}
+
+.currencyall p {
+    margin-bottom: 5px;
+}
+
+.selectedType {
+    color: green;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    margin-bottom: 0px;
+}
+
+.modalTypeBody {
+    padding-left: 24px;
+    padding-right: 20px;
+}
+
+.rate_mg {
+    margin-bottom: 5px;
+}
+
+.rateval {
+    cursor: pointer;
+}
+
+.activerate {
+    color: #34dabb;
+	font-weight:bold;
+}
+
+span.receipthr hr {
+    border-top: 1px solid black !important;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.output-takeaway {
+    font-size: 16px;
+    margin-right: 5px;
+    border: 1px solid;
+    border-radius: 10px;
+    text-align: center;
+    width: 70px;
+    height: 70px;
+    padding-top: 24px;
+    margin: 0px 3px;
+    float: left;
+    margin-right: 5px;
+}
+
+.bg-btn123 {
+    color: #fff;
+    background: #BE6FBC;
+    border-color: #BE6FBC
+}
+
+.bg-btn1 {
+    color: #fff;
+    background: #B4B8B9;
+    border-color: #B4B8B9
+}
+
+.bg-5ab {
+    color: #fff;
+    background: #C96687;
+    border-color: #C96687
+}
+
+.bg-btn15 {
+    color: #fff;
+    background: #C1B358;
+    border-color: #C1B358
+}
+
+.bg-btnplus {
+    color: #fff;
+    background: #834047;
+    border-color: #834047
+}
+
+.table_999 {
+    color: white;
+    border: 1px solid;
+}
+
+.table_999:hover {
+    border-color: #34dabb;
+    color: #34dabb;
+}
+
+.bg-opos_combinebtn {
+    color: #fff;
+    background: #333333;
+    border-color: #333333;
+}
+
+.combine-pd {
+    padding-bottom: 10px;
+}
+
+.opos_combinebtn {
+    width: 70px !important;
+    height: 40px !important;
+    padding-top: 3px;
+    text-align: center;
+    vertical-align: middle;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    padding-left: 12px;
+    border-radius: 10px;
+    font-size: 21px;
+    float: none;
+
+}
+table.dataTable.no-footer{
+    border-bottom: 1px solid #ddd !important;
+}
+
+/* Custom CSS Styles for OPOSsum */
+
+#dailyOptModal {
+    z-index: 1055;
+}
+#OPTSaveResultModal {
+    z-index: 2000;
+}
+
+.small-text{
+    font-size: 10px;;
+}

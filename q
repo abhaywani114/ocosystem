@@ -1,0 +1,57 @@
+<div class="modal fade"  id="msgModal"  tabindex="-1"
+	role="dialog" aria-labelledby="staffNameLabel"
+	aria-hidden="true" style="text-align: center;" onclick="close_me(this)">
+
+	<div class="modal-dialog modal-dialog-centered  mw-75 w-50"
+		role="document" >
+		<div class="modal-content modal-inside bg-greenlobster"
+			style="width: 100%;  
+				 background-color: {{@$color}} !important" >
+			<div class="modal-header" style="border:0">&nbsp;</div>
+			<div class="modal-body text-center">
+				<h5 class="modal-title text-white mb-0"
+					id="statusModalLabel">{!! $msg !!}
+				</h5>
+			</div>
+			<div class="modal-footer"
+				style="border-top:0 none;padding-left:0;padding-right:0;">
+				&nbsp;
+			</div>
+		</div>
+	</div>
+</div>
+<style>
+	/* .btn {color: #fff !Important;} */
+</style>
+
+<script type="text/javascript">
+$("#msgModal").modal('show');
+
+$("#custom_msgModalSession").modal('show');
+
+$('#editUserModal').on('hidden.bs.modal', function (e) {
+	$('.modal-backdrop').remove();
+});
+
+$('.modal-backdrop').click(function(){
+	$('.modal-backdrop').remove();
+});
+
+setTimeout(function() {
+	$("#productResponce").html("");
+	$("#showEditInventoryModal").html("");
+	$("#showEditServiceModal").html("");
+	$("#showEditDrumbarrelModal").html("");
+	var v = $("#msgModal").modal('hide');
+	v.html("");
+	$("#msgModal").remove();
+	$('.modal-backdrop').remove();
+},2500)
+function close_me(e) {
+	target = e.target;
+	if ($(target).children().length < 1) {
+		$(target).remove();
+		$('.modal-backdrop').remove();
+	}
+}
+</script>

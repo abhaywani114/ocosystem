@@ -1,0 +1,169 @@
+<!--- {{$superAdmin = true}} -->
+@extends('layouts.layout')
+@section('content')
+<div id='superadminlanding'>
+<style>
+.pl_selected{
+    color: green !important;
+}
+.slimcell {
+	width:80px;
+	padding-top:2px !important;
+	padding-bottom:2px !important;
+}
+</style>
+
+<div class="row py-2 align-items-center"
+	style="padding-top:0 !important; padding-bottom:0 !important">
+    
+	<div class="col align-items-center" style="display:flex;height:75px;">
+		<h2 class="mb-0">Oceania Authorization</h2>
+	</div>
+	
+	<div class="col" style="flex:0 0 70%">
+		<h5 class="mb-0">
+			{{!empty($selected_user->name) ? $selected_user->name : 'User Name'}}
+		</h5>
+		<h5 class="mb-0">
+			{{!empty($selected_user->systemid) ? $selected_user->systemid : 'User ID'}}
+		</h5>
+	</div>
+</div>
+
+<input  type="hidden" value="0" id="merchant_selected">	
+<input  type="hidden" value="0" id="totalclicks">
+
+<table class="table table-bordered align-content-center"
+	id="oceania_authorization_table" style="width:100%">
+	<thead class="thead-dark">
+	<tr>
+		<th style="">No</th>
+		<th style="width:100px;">Location Id</th>
+		<th style="width:auto">Location Name</th>
+		<th style="">All</th>
+	</tr>
+	</thead>
+	<tbody class="tablebody">
+	</tbody>
+</table>
+
+<div id="res"></div>
+<div id="showEditUserModal"></div>
+<br><br>
+
+
+@endsection
+@section('js')
+@include('superadmin.buttonpermission')
+
+<script>
+
+function load_oceania_authorization_table(id) {
+	var oceania_authorization_table = $('#oceania_authorization_table').DataTable(
+	{
+		"destroy": true,
+		"processing": false,
+		"serverSide": true,
+		"autoWidth": false,
+		"ajax": {
+			url:"{{route('super_admin.external.auth_user.datatable')}}",
+			type: "POST",
+			"data": {"user_id":  id}
+        },
+        columns: [
+		{data: 'DT_RowIndex', name: 'DT_RowIndex'},
+		{data: 'systemid', name: 'systemid'},
+        {data: 'name', name: 'name'},
+        {data: 'active', name: 'active'},
+        ],
+        "order": [],
+        "columnDefs": [  
+			{"className": "dt-center vt_middle", "targets": [0]},
+			{"className": "dt-center vt_middle slimcell", "targets": [3]},
+			{"width":"30px","targets":[0,3]},	
+			{"className": "vt_middle", "targets": [0,1]},
+			{ orderable: false, targets: [0,2,3]}
+		],
+	});
+
+	oceania_authorization_table.draw()
+}
+
+
+load_oceania_authorization_table({{$selected_user->id}});
+
+function activate_location(id,e) {
+	$.post("{{route('super_admin.external.auth_user.activate_user')}}", {
+		user_id: {{$selected_user->id}},
+		location_id: id
+	}).done(function(res) {
+		$("#res").html(res);
+		$(e).toggleClass('active_button_activated')
+	}).fail( (res) => $("#res").html(res));
+}
+
+function edit_details(id) {
+	$.post('', {
+		'id' 			: id,
+		'field_name'	: 'staff_name'
+	}).
+		done( (res) => $("#showEditUserModal").html(res)).
+		fail( (res) => $("#showEditUserModal").html(res))
+}
+</script>
+
+
+<style>
+.modal-add-style {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+td > p { color: #007bff;}
+
+.G_King > td > p, .King > td > p[data-field=status] {
+	color:black !important;
+	cursor: not-allowed !important;
+}
+
+tr.status_disabled p[data-field=status],
+tr.self p[data-field=status],
+tr.role_disabled p[data-field=staff_role],
+tr.name_disable p[data-field=staff_name] {
+	color:grey !important;
+	cursor: not-allowed !important;
+}
+
+tr.self p[data-field=staff_name],
+td > p[data-field=staff_role] {
+	color:#007bff !important;
+}
+
+.King,.G_King {
+	background: yellow !important;
+}
+
+.sadmin {
+	background: yellow !important;
+}
+ .active_button:hover,.active_button:active {
+        background: transparent;
+        color: #34dabb;
+        border: 1px #34dabb solid;
+        font-weight: bold;
+    }
+    .active_button {
+        background: transparent;
+        color: #ccc ;
+        border: 1px #ccc solid;   
+    }
+    .active_button_activated{
+        background: transparent;
+        color: #34dabb;
+        border: 1px #34dabb solid;
+        font-weight: bold;       
+    }
+.vt_middle{vertical-align: middle !important;}
+</style>
+</div>
+@endsection

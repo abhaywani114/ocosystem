@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>WebSerial Prototype</title>
+
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/jquery-ui.min.css">
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/CRC16-ANSI.js"></script>
+<script type="text/javascript" src="/js/serial.js" defer></script>
+
+<style>
+#notSupported {
+	padding: 1em;
+	background-color: red;
+	color: white;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+code {
+	color:yellow;
+}
+</style>
+
+<script>
+
+$(document).ready(function() {
+	/* Detection of WebSerial support in browser */
+	if ('serial' in navigator) {
+		$('#notSupported').hide();
+	}
+});
+
+</script>
+
+</head>
+<body>
+<main class="container" id="main">
+<h1>Web Serial Prototype</h1>
+
+<!-- Display warning in case browser doesn't support WebSerial -->
+<div id="notSupported">
+	Sorry, <b>Web Serial</b> is not supported on this device, '
+	make sure you're running Chrome 78 or later and have enabled the
+	<code>#enable-experimental-web-platform-features</code> flag in
+	<code>chrome://flags</code>
+</div>
+
+<button id="butConnect" type="button">Connect</button>
+
+<!-- Display serial data -->
+<pre id="log" style="margin-top:20px"></pre>
+
+<!--
+document.write("CRC16 of test is 0x" + crc16('test').toString(16) + "<br>");
+-->
+
+
+</main>
+</body>
+</html>

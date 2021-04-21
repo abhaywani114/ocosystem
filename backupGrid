@@ -1,0 +1,238 @@
+
+
+        <div class="col-md-6" id="Pstart" style="display: inline-block;width: 100%;text-align: left;bottom: 5%;position: absolute;left: 0%;">
+
+		<br/>
+			
+			<br/>
+			 <button data-toggle="modal" data-target="#pointRedemption"  
+				class="btn btn-success btn-log bg-point sellerbuttonwide"
+				style="padding-left:0;padding-right:0;float:none;
+				margin-right: 0px; border-radius:10px; ">
+                <span>Point<br>Redemption</span>
+            </button>
+	
+			 <button class="btn btn-success btn-log bg-search-doc sellerbutton sellerbuttonwide pl-0 pr-0"
+				style="float:none; margin-right: 0px;border-radius:10px;" data-toggle="modal" data-target="#searchDocumentModal">
+                <span>Super Search</span>
+            </button>
+
+			<br/>
+		
+
+			<a href="javascript:openNewTabURL('{{route('wastage_opossum',$terminal->id)}}')" >
+			<button class="pl-0 pr-0 btn btn-success btn-log bg-product sellerbuttontwo"
+				style="float:none; margin-right: 0px;  border-radius:10px;">
+                <span style="text-align:center;line-height:80%">
+				Wastage<br>Damage</span>
+            </button>
+			</a>
+
+			<button onclick="priceTag('{{$terminal->systemid}}')"
+				class="btn btn-success btn-log bg-product sellerbutton pl-0 pr-0"
+				style="float:none; margin-right:0;border-radius:10px;">
+                <span>Price&nbsp;Tag</span>
+            </button>
+
+			<a href="javascript:openNewTabURL('{{url('opossum/itemised-report/'.$terminal->systemid)}}')">
+ 			<button class="btn btn-success btn-log bg-ageing sellerbutton sellerbuttonwide pl-0 pr-0"
+				style="float:none; margin-right: 0px;border-radius:10px;" >
+                <span>Itemized Report</span>
+            </button>
+			</a>
+            <button class="btn btn-success btn-log bg-black sellerbutton"  onclick="tankbuttonopossum()"
+				id="tank" style="float:none; margin-right: 0px;border-radius:10px; ">
+                <span>Tank</span>
+            </button>
+	
+			@if ($mode == "Franchise")
+			<a href="javascript: openNewTabURL('{{route('franchise.location_price', $terminal->id)}}');">
+				<button class="btn btn-success bg-product sellerbuttonwide"
+					style="padding-top:5px;padding-left:0;padding-right:0;float:none;margin-right: 0px; border-radius:10px; ">
+        	        <span style="padding-top:5px">Location<br>Price</span>
+				 </button>
+			</a>
+			@endif
+	
+			<br/>
+		
+			<button class="pl-0 pr-0 btn btn-success btn-log bg-product sellerbutton"
+				onclick="productbuttonopossum()"
+				id="product"
+				style="float:none; margin-right: 0px;border-radius:10px; ">
+                <span>Product</span>
+            </button>
+
+			<a href="javascript:openNewTabURL('{{url('opossum-pending')}}')">
+			<button  class="btn btn-success btn-log bg-product sellerbutton"
+				style="float:none; margin-right:0;padding-left:0;padding-right:0;border-radius:10px; ">
+                <span style="margin-left:-2px">Pending</span>
+            </button>
+			</a>
+
+			<a
+			@if ($mode != 'Franchise') 
+				href="javascript:openNewTabURL('{{ url('oposum/opossum-promo') }}');" disabled=disabled 
+			@endif
+			>
+            <button class="btn btn-success btn-log bg-define_promo sellerbutton"
+				style="padding-left:11px; float:none; margin-right: 0px;border-radius:10px; " 
+			@if ($mode == 'Franchise') 
+				class="disabled" disabled=disabled
+			@endif
+			>
+                <span>Define Promo</span>
+            </button>
+            </a>
+
+ 			<button class="btn btn-success btn-log bg-eod_print sellerbutton pl-0 pr-0"
+				style="float:none; margin-right: 0px;  border-radius:10px;" onclick="end_shift()">
+                <span>Change<br>Shift</span>
+            </button>
+ 
+			<!--
+ 			<a href="#" target="_blank">
+			<button class="btn btn-success btn-log bg-product sellerbuttonwide"
+				style="padding-left:8px; float:none; margin-right: 0px;  border-radius:10px;">
+                <span>Auto<br>Replenishment</span>
+            </button>
+			</a>
+			-->
+			<button class="btn btn-success btn-log bg-black sellerbuttonwide"  onclick="fuelmovementbuttonopossum()"
+			id="fuelmovement" style="float:none; margin-right: 0px;border-radius:10px; ">
+                <span>Fuel&nbsp;Movement</span>
+            </button>
+			
+			<button class="btn btn-success btn-log bg-wallet sellerbuttonwide text-center"
+				onclick="show_calibration_receipt_list()"
+				id="tank"
+				style="float:none; margin-right: 0px;padding-left:0;padding-right:0;border-radius:10px; ">
+                <span>Calibration List</span>
+			</button>
+
+			<br/>
+			<a href="javascript:openNewTabURL('{{url('opossum-stockin/'.$terminal->systemid)}}');">
+			<button class="pl-0 pr-0 btn btn-success btn-log bg-stock_in sellerbutton"
+				style="float:none; margin-right: 0px;border-radius:10px; ">
+				<span>Stock In</span>
+			</button>
+			</a>
+
+			<!--
+            <button data-toggle="modal" data-target="#promocode" class="btn btn-success btn-log bg-define_promo sellerbutton"
+				style="padding-left:11px; float:none; margin-right: 0px;border-radius:10px; ">
+                <span>Promo Code</span>
+            </button>
+			-->
+
+       
+			<a href="javascript:openNewTabURL('{{url('opossum-stockout/'.$terminal->systemid)}}')">
+			<button class="pl-0 pr-0 btn btn-success btn-log bg-stock_out sellerbutton"
+				style="float:none; margin-right: 0px;border-radius:10px; ">
+				<span>Stock Out</span>
+			</button>
+			</a>
+
+            <button class="pl-0 pr-0 btn btn-success btn-log bg-branch_eod sellerbutton"
+				data-toggle="modal" data-dismiss="modal" data-target="#brancheodModal"
+				style="float:none; margin-right: 0px;border-radius:10px; ">
+				<span>Branch EOD</span>
+			</button>
+
+			<button class="pl-0 pr-0 btn btn-success btn-log bg-eod_print sellerbutton"
+				id="eodModal"
+				style="float:none; margin-right: 0px;border-radius:10px; ">
+                <span>EOD Print</span>
+            </button>
+
+
+        </div>
+
+        <div class="col-md-6" style="display: inline-block;width: 100%;text-align: right;bottom: 5%;position: absolute;right: 0%;">
+			{{--	
+            <a target="_blank"  href="{{ url('opossum/'.$terminal->systemid.'/opos_tablename') }}">
+                <button class="pl-0 pr-0 btn btn-success btn-log bg-rate_other_all sellerbutton"
+                        style="float:none; margin-right: 0px;border-radius:10px;">
+                    <span>Table<br>Naming</span>
+                </button>
+            </a>
+            --}}
+			
+			 <a id="opossumbuttona" class="sellerab"
+			   href="javascript:openNewTabURL('{{ url("opossum/counter/$terminal->systemid") }}')"
+				 style="text-decoration:none;">
+                <button class="pl-0 pr-0 btn btn-success btn-log bg-rate_other_all sellerbutton"
+					style="float:none; margin-right: 0px;border-radius:10px;">
+				<span>Counter</span>
+                </button>
+            </a>
+
+			<button class="pl-0 pr-0 btn btn-success btn-log bg-rate_other_all sellerbutton"
+				style="float:none; margin-right: 0;  border-radius:10px;"
+				onclick="open_rate_modal()">
+                <span>Rate</span>
+            </button>
+
+			<button class="pl-0 pr-0 btn btn-success btn-log bg-rate_other_all sellerbutton"
+				style="float:none; margin-right: 0px;border-radius:10px;"
+				data-toggle="modal" data-target=".currencyModal">
+                <span>Currency</span>
+			</button>
+
+			<br/>
+		
+			<a href="javascript:openNewTabURL('/screen_e/{{ $location->id }}');">
+			<button class="pl-0 pr-0 btn btn-success btn-log bg-rate_other_all sellerbuttonwide"
+				style="float:none; margin-right: 0px;border-radius:10px;">
+                <span>Screen E</span>
+            </button>
+            </a>
+
+			 <button class="pl-0 pr-0 btn btn-success btn-log bg-rate_other_all sellerbutton sellerbuttonwide"
+				data-toggle="modal" data-target=".typeModal"
+				style="float:none; margin-right: 0px;border-radius:10px; ">
+                <span>Business Type</span>
+            </button><br/>
+
+			<!--
+            <button class="btn btn-success btn-log bg-rate_other_all sellerbutton sellerbuttonwide"
+				data-toggle="modal" data-target=".typeModal"
+				style="padding-left:11px; float:none; margin-right: 0px;border-radius:10px; ">
+                <span>Six Rows Mode</span>
+            </button><br/>
+			-->
+
+            <button class="pl-0 pr-0 btn btn-success btn-log bg-rate_other_all sellerbutton sellerbuttonwide"
+                style="float:none; margin-right: 0;  border-radius:10px;"
+				data-toggle="modal" data-target="#locationModal">
+                <span>Screen E Image</span>
+            </button>
+
+			<!--
+            <a target="_blank"  href="{{ url('screen_f/'.$terminal->systemid) }}">
+			<button class="btn btn-success btn-log bg-rate_other_all sellerbutton"
+				style="padding-left:8px; float:none; margin-right: 0px;border-radius:10px;">
+                <span>Screen<br>F</span>
+			</button>
+            </a>
+			-->
+
+		   	<!-- 
+            <button class="btn btn-success btn-log bg-rate_other_all
+				text-center sellerbutton"
+				style="padding:0; float:none; margin-right: 0px;border-radius:10px; ">
+                <span>PlatyPOS<br>User</span>
+            </button>
+			-->
+
+            {{--href="{{ url('/') }}/opossum/opossumpreference"--}}
+
+            <a href="javascript:openNewTabURL('{{ url("opossum/opossumpreference/$terminal->systemid") }}');" >
+				<button class="pl-0 pr-0 btn btn-success btn-log bg-rate_other_all sellerbutton sellerbuttonwide"
+				style="float:none; margin-right: 0px;border-radius:10px;">
+                <span>Preference</span>
+            </button>
+            </a>
+        </div>
+    </div>
+

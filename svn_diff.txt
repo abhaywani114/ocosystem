@@ -1,0 +1,30 @@
+Index: app/Http/Controllers/ForecourtController.php
+===================================================================
+--- app/Http/Controllers/ForecourtController.php	(revision 9927)
++++ app/Http/Controllers/ForecourtController.php	(working copy)
+@@ -426,7 +426,10 @@
+         $nz_data=$request->nz_data;
+ 		$og_ids = $request->og_ids;
+ 
++		$controller = DB::table('og_controller')->find($controller_id);
++
+         $pump_id=OgPump::where("systemid",$system_id)->first()->id;
++
+         OgPump::whereId($pump_id)->update([
+             "controller_id"=>$controller_id,
+             "og_pts2_protocol_id"=>$pump_configuration_protocol,
+@@ -476,6 +479,14 @@
+ 					'ogfuel_id' =>$ogfuel_id
+ 				]
+ 			]);
++
++			DB::table('ogfuelfuelgrades')->insert([
++				'company_id'	=> $this->user_data->company_id(),
++				'location_id'	=> $controller->location_id,
++				'ogfuel_id'		=> $ogfuel_id,
++				'controller_id'	=> $controller_id,
++				'fuelgrades_id' => $i
++			]);
+         }
+ 
+         for($j = 0; $j <= 6; $j++){
